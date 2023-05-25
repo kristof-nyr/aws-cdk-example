@@ -28,6 +28,11 @@ export class HitCounter extends Construct {
                 HITS_TABLE_NAME: table.tableName
             }
         })
+
+        //Grant the Lambda role to read/write to DynamoDB table
+        table.grantReadWriteData(this.handler)
+        //Grant the Lambda role to invoke downtream func
+        props.downstream.grantInvoke(this.handler)
     }
 
 }
