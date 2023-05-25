@@ -4,6 +4,6 @@ exports.handler = async function(e) {
     return {
         statusCode: 200,
         headers: { "Content-Type": "text/plain"},
-        body: `Hello, CDK! You've hit ${e.path}\n`
+        body: `Good Afternoon, CDK! You've hit ${e.path}\n`
     }
 }
